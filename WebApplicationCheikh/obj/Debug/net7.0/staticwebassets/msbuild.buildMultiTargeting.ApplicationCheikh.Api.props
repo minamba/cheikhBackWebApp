@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ApplicationCheikh.Api.props" />
+</Project>

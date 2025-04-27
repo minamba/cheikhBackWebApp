@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ApplicationCheikh.Api.props" />
+</Project>
