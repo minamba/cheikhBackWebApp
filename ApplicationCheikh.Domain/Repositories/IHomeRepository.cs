@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface IHomeRepository
     {
-        Task<HomeViewModel> GetHomeAsync();
+        Task<Home> GetHomeAsync();
     }
 }

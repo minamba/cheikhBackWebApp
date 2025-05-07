@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Services
 {
     internal interface ISessionService
     {
-        Task<List<SessionViewModel>> GetSessionsAsync();
+        Task<List<Session>> GetSessionsAsync();
     }
 }

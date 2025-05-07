@@ -9,6 +9,9 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface ISeminaireQueueService
     {
-        Task<List<SeminaireQueueViewModel>> GetSeminaireUsersQueue();
+        Task<List<SeminaireQueue>> GetSeminaireUsersQueue();
+        Task<SeminaireQueue> UpdateSeminaireUserQueue(int IdUser, SeminaireQueue model);
+        Task<SeminaireQueue> AddSeminaireUserQueue(SeminaireQueue model);
+        Task<bool> DeleteSeminaireUserQueue(int IdUser);
     }
 }

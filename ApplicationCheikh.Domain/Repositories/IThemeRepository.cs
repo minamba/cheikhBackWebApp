@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface IThemeRepository
     {
-        Task<List<ThemeViewModel>> GetThemesAsync();
+        Task<List<Theme>> GetThemesAsync();
     }
 }

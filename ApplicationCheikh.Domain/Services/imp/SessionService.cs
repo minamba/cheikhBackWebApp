@@ -17,9 +17,9 @@ namespace ApplicationCheikh.Domain.Services.imp
             _sessionRepository = sessionRepository;
         }
 
-        public async Task<List<SessionViewModel>> GetSessionsAsync()
+        public async Task<List<Session>> GetSessionsAsync()
         {
-            return new List<SessionViewModel>();
+            return new List<Session>();
         }
     }
 }

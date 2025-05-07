@@ -17,9 +17,9 @@ namespace ApplicationCheikh.Domain.Services.imp
             _seminaireRepository = seminaireRepository;
         }
 
-        public async Task<SeminaireViewModel> GetSeminaireAsync()
+        public async Task<Seminaire> GetSeminaireAsync()
         {
-            return new SeminaireViewModel();
+            return new Seminaire();
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using ApplicationCheikh.Domain.Models;
 using ApplicationCheikh.Domain.Repositories;
 using AutoMapper;
-using MIAdbConsole.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,10 +21,10 @@ namespace ApplicationCheikh.Dal.Respositories
         }
 
 
-        public async Task<HomeViewModel> GetHomeAsync() {
+        public async Task<Home> GetHomeAsync() {
 
             var homeEntity = await _context.Homes.ToListAsync();
-            var homeModel = homeEntity.Select(h => new HomeViewModel
+            var homeModel = homeEntity.Select(h => new Home
             {
                  Id = h.Id,
                  Title = h.Title,

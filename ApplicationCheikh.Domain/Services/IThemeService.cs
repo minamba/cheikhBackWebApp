@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface IThemeService
     {
-        Task<List<ThemeViewModel>> GetThemesAsync();
+        Task<List<Theme>> GetThemesAsync();
     }
 }

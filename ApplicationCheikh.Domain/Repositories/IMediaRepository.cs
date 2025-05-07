@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface IMediaRepository
     {
-        Task<List<MediaViewModel>> GetMediasAsync();
+        Task<List<Media>> GetMediasAsync();
     }
 }

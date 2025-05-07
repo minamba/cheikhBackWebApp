@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MIAdbConsole.Models;
+namespace ApplicationCheikh.Domain.Models;
 
-public partial class Payment
+public partial class RegistrationQueue
 {
     public int Id { get; set; }
 
@@ -13,11 +13,11 @@ public partial class Payment
 
     public string? PhoneNumber { get; set; }
 
-    public string? Mail { get; set; }
-
-    public decimal? Amount { get; set; }
+    public string? Email { get; set; }
 
     public DateTime? Date { get; set; }
 
-    public string? PaymentMode { get; set; }
+    public bool? IsContacted { get; set; }
+
+    public bool? SendedToBot { get; set; }
 }

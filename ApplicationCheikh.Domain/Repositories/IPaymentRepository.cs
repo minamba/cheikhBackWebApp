@@ -9,6 +9,32 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface IPaymentRepository
     {
-        Task<List<PaymentViewModel>> GetPayments();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Task<List<Payment>> GetPayments();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="IdPayment"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        Task<Payment> UpdatePayment(int IdPayment, Payment model);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        Task<Payment> AddPayment(Payment model);
+
+          /// <summary>
+          /// 
+          /// </summary>
+          /// <param name="IdPayment"></param>
+          /// <returns></returns>
+        Task<bool> DeletePayment(int IdPayment);
     }
 }

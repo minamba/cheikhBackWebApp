@@ -1,42 +1,63 @@
-﻿using ApplicationCheikh.Domain.Models;
+﻿using ApplicationCheikh.Api.Builder;
+using ApplicationCheikh.Api.Builder.impl;
+using ApplicationCheikh.Domain.Models;
+using ApplicationCheikh.Domain.Repositories;
+using ApplicationCheikh.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 
 namespace ApplicationCheikh.Api.Controllers
 {
+    [ApiController]
+    [Route("Registration")]
     public class RegistrationController : Controller
     {
-        [ApiController]
-        [Route("Registration")]
-        public class UserController : ControllerBase
-        {
+            IRegistrationQueueViewModelBuilder _registrationQueueViewModelBuilder;
 
-            [HttpGet("registration/users")]
-            [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "liste des potentiels futurs elèves")]
+            public RegistrationController(IRegistrationQueueViewModelBuilder registrationQueueViewModelBuilder)
+            {
+            _registrationQueueViewModelBuilder = registrationQueueViewModelBuilder ?? throw new ArgumentNullException(nameof(registrationQueueViewModelBuilder), $"Cannot instantiate {GetType().Name}");
+            }
+
+
+            [HttpGet("registrations")]
+            [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(IEnumerable<RegistrationQueueViewModel>), Description = "liste des potentiels futurs elèves")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> GetRegistrationsAsync()
             {
-                return Ok();
+                var result = await _registrationQueueViewModelBuilder.GetRegistrationUsersQueue();
+                return Ok(result);
             }
 
 
-            [HttpPost("registration/user")]
-            [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Ajout d'un potentiel futur elève")]
+            [HttpPut("registration")]
+            [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "modification d'un potentiel futur elève")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
-            public async Task<IActionResult> PostRegistrationsAsync([FromBody] RegistrationQueueViewModel model)
+            public async Task<IActionResult> PutRegistrationsAsync([FromBody] RegistrationQueue model)
             {
-                return Ok();
+                var result = await _registrationQueueViewModelBuilder.UpdateRegistrationUserQueue(model.Id, model);
+                return Ok(result);
             }
 
 
-            [HttpDelete("registration/user/{id}")]
+            [HttpPost("registration")]
+            [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "ajout d'un potentiel futur elève")]
+            [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
+            public async Task<IActionResult> PostRegistrationsAsync([FromBody] RegistrationQueue model)
+            {
+                var result = await _registrationQueueViewModelBuilder.AddRegistrationUserQueue(model);
+                return Ok(result);
+            }
+
+
+            [HttpDelete("{id}")]
             [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Suppression d'un potentiel futur elève")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> DeleteRegistrationsAsync([FromRoute] int id)
             {
-                return Ok();
+                var result = await _registrationQueueViewModelBuilder.DeleteRegistrationUserQueue(id);
+                return Ok(result);
             }
-        }
     }
 }

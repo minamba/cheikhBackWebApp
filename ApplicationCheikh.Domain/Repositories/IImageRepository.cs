@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface IImageRepository
     {
-        Task<List<ImageVIewModel>> GetImagesAsync();
+        Task<List<Image>> GetImagesAsync();
     }
 }

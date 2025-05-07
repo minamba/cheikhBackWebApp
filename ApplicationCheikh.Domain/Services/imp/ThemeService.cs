@@ -17,9 +17,9 @@ namespace ApplicationCheikh.Domain.Services.imp
             _themeRepository = themeRepository;
         }
 
-        public async Task<List<ThemeViewModel>> GetThemesAsync()
+        public async Task<List<Theme>> GetThemesAsync()
         {
-            return new List<ThemeViewModel>();
+            return new List<Theme>();
         }
     }
 }

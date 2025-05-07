@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface IHomeService
     {
-       Task<HomeViewModel> GetHomeAsync();
+       Task<Home> GetHomeAsync();
     }
 }

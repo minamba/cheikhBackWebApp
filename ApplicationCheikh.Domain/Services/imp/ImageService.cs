@@ -17,9 +17,9 @@ namespace ApplicationCheikh.Domain.Services.imp
             _imageRepository = imageRepository;
         }
 
-        public async Task<List<ImageVIewModel>> GetImagesAsync()
+        public async Task<List<Image>> GetImagesAsync()
         {
-            return new List<ImageVIewModel>();
+            return new List<Image>();
         }
 
     }

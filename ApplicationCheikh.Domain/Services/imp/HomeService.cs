@@ -17,9 +17,9 @@ namespace ApplicationCheikh.Domain.Services.imp
             _homeRepository = homeRepository;
         }
 
-        public async Task<HomeViewModel> GetHomeAsync()
+        public async Task<Home> GetHomeAsync()
         {
-            return new HomeViewModel();
+            return new Home();
         }
 
     }

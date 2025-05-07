@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface IMediaService
     {
-        Task<List<MediaViewModel>> GetMediasAsync();
+        Task<List<Media>> GetMediasAsync();
     }
 }

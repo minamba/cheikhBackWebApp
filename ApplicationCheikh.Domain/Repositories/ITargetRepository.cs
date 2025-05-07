@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface ITargetRepository
     {
-        Task<List<TargetViewModel>> GetTargetsAsync();
+        Task<List<Target>> GetTargetsAsync();
     }
 }

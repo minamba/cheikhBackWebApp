@@ -17,9 +17,9 @@ namespace ApplicationCheikh.Domain.Services.imp
             _targetRepository = targetRepository;
         }
 
-        public async Task<List<TargetViewModel>> GetTargetsAsync()
+        public async Task<List<Target>> GetTargetsAsync()
         {
-            return new List<TargetViewModel>();
+            return new List<Target>();
         }
     }
 }

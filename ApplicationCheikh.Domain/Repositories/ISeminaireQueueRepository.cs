@@ -9,6 +9,32 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface ISeminaireQueueRepository
     {
-        Task<List<SeminaireQueueViewModel>> GetSeminaireUsersQueue();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Task<List<SeminaireQueue>> GetSeminaireUsersQueue();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="IdUser"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        Task<SeminaireQueue> UpdateSeminaireUserQueue(int IdUser, SeminaireQueue model);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        Task<SeminaireQueue> AddSeminaireUserQueue(SeminaireQueue model);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="IdUser"></param>
+        /// <returns></returns>
+        Task<bool> DeleteSeminaireUserQueue(int IdUser);
     }
 }

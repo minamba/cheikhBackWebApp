@@ -17,9 +17,25 @@ namespace ApplicationCheikh.Domain.Services.imp
             _paymentRepository = paymentRepository;
         }
 
-        public async Task<List<PaymentViewModel>> GetPaymentsAsync()
+        public async Task<Payment> AddPayment(Payment model)
         {
-            return new List<PaymentViewModel>();
+            return await _paymentRepository.AddPayment(model);
+        }
+
+        public async Task<bool> DeletePayment(int IdPayment)
+        {
+            return await _paymentRepository.DeletePayment(IdPayment);
+        }
+
+        public async Task<List<Payment>> GetPayments()
+        {
+            return await _paymentRepository.GetPayments();
+        }
+
+ 
+        public async Task<Payment> UpdatePayment(int IdPayment, Payment model)
+        {
+            return await _paymentRepository.UpdatePayment(IdPayment, model);
         }
     }
 }

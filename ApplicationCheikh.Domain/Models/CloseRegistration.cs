@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MIAdbConsole.Models;
+namespace ApplicationCheikh.Domain.Models;
 
-public partial class Registration
+public partial class CloseRegistration
 {
     public int Id { get; set; }
 

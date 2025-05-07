@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface ITargetService
     {
-        Task<List<TargetViewModel>> GetTargetsAsync();
+        Task<List<Target>> GetTargetsAsync();
     }
 }

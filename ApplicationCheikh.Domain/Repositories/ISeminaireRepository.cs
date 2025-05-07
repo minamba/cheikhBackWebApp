@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface ISeminaireRepository
     {
-        Task<SeminaireViewModel> GetSeminaireAsync();
+        Task<Seminaire> GetSeminaireAsync();
     }
 }

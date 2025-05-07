@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface IWitnessRepository
     {
-        Task<List<PaymentViewModel>> GetWitnessesAsync();
+        Task<List<Payment>> GetWitnessesAsync();
     }
 }

@@ -17,9 +17,9 @@ namespace ApplicationCheikh.Domain.Services.imp
             _mediaRepository = mediaRepository;
         }
 
-        public async Task<List<MediaViewModel>> GetMediasAsync()
+        public async Task<List<Media>> GetMediasAsync()
         {
-            return new List<MediaViewModel>();
+            return new List<Media>();
         }
     }
 }

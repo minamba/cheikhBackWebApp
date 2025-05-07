@@ -9,6 +9,9 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface IRegistrationQueueService
     {
-        Task<List<RegistrationQueueViewModel>> GetRegistrationUsersQueue();
+        Task<List<RegistrationQueue>> GetRegistrationUsersQueue();
+        Task<RegistrationQueue> UpdateRegistrationUserQueue(int IdUser, RegistrationQueue model);
+        Task<RegistrationQueue> AddRegistrationUserQueue(RegistrationQueue model);
+        Task<bool> DeleteRegistrationUserQueue(int IdUser);
     }
 }

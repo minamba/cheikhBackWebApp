@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface IImageService
     {
-        Task<List<ImageVIewModel>> GetImagesAsync();
+        Task<List<Image>> GetImagesAsync();
     }
 }

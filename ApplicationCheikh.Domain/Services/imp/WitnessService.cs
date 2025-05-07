@@ -17,9 +17,9 @@ namespace ApplicationCheikh.Domain.Services.imp
             _witnessRepository = witnessRepository;
         }
 
-        public async Task<List<WitnessViewModel>> GetWitnessesAsync()
+        public async Task<List<Witness>> GetWitnessesAsync()
         {
-            return new List<WitnessViewModel>();
+            return new List<Witness>();
         }
     }
 }

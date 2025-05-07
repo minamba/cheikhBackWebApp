@@ -9,6 +9,9 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface IPaymentService
     {
-        Task<List<PaymentViewModel>> GetPaymentsAsync();
+        Task<List<Payment>> GetPayments();
+        Task<Payment> UpdatePayment(int IdPayment, Payment model);
+        Task<Payment> AddPayment(Payment model);
+        Task<bool> DeletePayment(int IdPayment);
     }
 }

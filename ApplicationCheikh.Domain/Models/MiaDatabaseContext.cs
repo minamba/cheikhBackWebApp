@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace MIAdbConsole.Models;
+namespace ApplicationCheikh.Domain.Models;
 
 public partial class MiaDatabaseContext : DbContext
 {

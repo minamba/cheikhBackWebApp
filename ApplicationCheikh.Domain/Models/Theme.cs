@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MIAdbConsole.Models;
+namespace ApplicationCheikh.Domain.Models;
 
 public partial class Theme
 {

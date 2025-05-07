@@ -19,6 +19,23 @@
           }
         }
       },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -2966,7 +2983,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "AutoMapper": "9.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite.Design": "1.1.6"
         },
         "compile": {
@@ -2993,6 +3012,19 @@
         "lib/net461/AutoMapper.xml",
         "lib/netstandard2.0/AutoMapper.dll",
         "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/7.0.0": {
+      "sha512": "szI4yeRIM7GWe9JyekW0dKYehPB0t6M+I55fPeCebN6PhS7zQZa0eG3bgOnOx+eP3caSNoE7KEJs2rk7MLsh8w==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
       ]
     },
     "Azure.Core/1.24.0": {
@@ -8952,6 +8984,8 @@
     "net7.0": [
       "ApplicationCheikh.Dal >= 1.0.0",
       "ApplicationCheikh.Domain >= 1.0.0",
+      "AutoMapper >= 10.0.0",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 7.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.9",
       "Microsoft.EntityFrameworkCore >= 7.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite.Design >= 1.1.6",
@@ -9007,6 +9041,14 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[10.0.0, )"
+          },
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[7.0.0, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.9, )"

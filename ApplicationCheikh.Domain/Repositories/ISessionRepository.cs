@@ -9,6 +9,6 @@ namespace ApplicationCheikh.Domain.Repositories
 {
     public interface ISessionRepository
     {
-        Task<List<SessionViewModel>> GetSessionsAsync();
+        Task<List<Session>> GetSessionsAsync();
     }
 }

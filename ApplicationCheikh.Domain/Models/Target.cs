@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MIAdbConsole.Models;
+namespace ApplicationCheikh.Domain.Models;
 
-public partial class Session
+public partial class Target
 {
     public int Id { get; set; }
 
