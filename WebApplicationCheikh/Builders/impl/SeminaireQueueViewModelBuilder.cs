@@ -43,20 +43,26 @@ namespace ApplicationCheikh.Api.Builders.impl
             foreach (var r in result)
             {
                 var seminaireUser = seminaireUserList.FirstOrDefault(x => x.Id == r.Id);
-                var seminaire = seminaires.FirstOrDefault(x => x.Id == seminaireUser.IdSeminaire);
 
-                var seminaireVM = new SeminaireViewModel
+                if (seminaireUser.IdSeminaire != null)
                 {
-                    Id = r.Id,
-                    Title = seminaire.Title,
-                    Active = seminaire.Active,
-                    Amount = seminaire.Amount,
-                    Banner = new ImageVIewModel(),
-                    Graphic = new ImageVIewModel(),
-                    Video = new MediaViewModel()
-                };
+                    var seminaire = seminaires.FirstOrDefault(x => x.Id == seminaireUser.IdSeminaire);
 
-                r.Seminaire = seminaireVM;
+                    var seminaireVM = new SeminaireViewModel
+                    {
+                        Id = r.Id,
+                        Title = seminaire.Title,
+                        Active = seminaire.Active,
+                        Amount = seminaire.Amount,
+                        Banner = new ImageVIewModel(),
+                        Graphic = new ImageVIewModel(),
+                        Video = new MediaViewModel()
+                    };
+
+                    r.Seminaire = seminaireVM;
+                }
+                else
+                    r.Seminaire = null;
             }
 
             return result;
