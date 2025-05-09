@@ -8,12 +8,14 @@ namespace ApplicationCheikh.Api.Builders.impl
     public class SeminaireQueueViewModelBuilder : ISeminaireQueueViewModelBuilder
     {
         private ISeminaireQueueService _seminaireQueueService;
+        private ISeminaireService _seminaireService;
         private IMapper _mapper;
 
 
-        public SeminaireQueueViewModelBuilder(ISeminaireQueueService seminaireQueueService, IMapper mapper)
+        public SeminaireQueueViewModelBuilder(ISeminaireQueueService seminaireQueueService, ISeminaireService seminaireService, IMapper mapper)
         {
             _seminaireQueueService = seminaireQueueService;
+            _seminaireService = seminaireService;
             _mapper = mapper;
         }
 
@@ -34,8 +36,28 @@ namespace ApplicationCheikh.Api.Builders.impl
         public async Task<List<SeminaireQueueViewModel>> GetSeminaireUsersQueue()
         {
             var seminaireUserList = await _seminaireQueueService.GetSeminaireUsersQueue();
+            var seminaires = await _seminaireService.GetSeminaires();
 
             var result = _mapper.Map<List<SeminaireQueueViewModel>>(seminaireUserList);
+
+            foreach (var r in result)
+            {
+                var seminaireUser = seminaireUserList.FirstOrDefault(x => x.Id == r.Id);
+                var seminaire = seminaires.FirstOrDefault(x => x.Id == seminaireUser.IdSeminaire);
+
+                var seminaireVM = new SeminaireViewModel
+                {
+                    Id = r.Id,
+                    Title = seminaire.Title,
+                    Active = seminaire.Active,
+                    Amount = seminaire.Amount,
+                    Banner = new ImageVIewModel(),
+                    Graphic = new ImageVIewModel(),
+                    Video = new MediaViewModel()
+                };
+
+                r.Seminaire = seminaireVM;
+            }
 
             return result;
         }

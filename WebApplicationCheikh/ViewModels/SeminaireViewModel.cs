@@ -12,11 +12,11 @@ namespace ApplicationCheikh.Domain.Models
 
         public string? Title { get; set; }
 
-        public int? IdBanner { get; set; }
+        public ImageVIewModel? Banner { get; set; }
 
-        public int? IdMedia { get; set; }
+        public MediaViewModel? Video { get; set; }
 
-        public int? IdImage { get; set; }
+        public ImageVIewModel? Graphic { get; set; }
 
         public decimal? Amount { get; set; }
 

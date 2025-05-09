@@ -19,5 +19,7 @@ namespace ApplicationCheikh.Domain.Models
         public DateTime? Date { get; set; }
 
         public bool? MailSent { get; set; }
+
+        public SeminaireViewModel? Seminaire { get; set; }
     }
 }
