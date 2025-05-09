@@ -40,7 +40,7 @@ builder.Services.AddScoped<IPaymentViewModelBuilder, PaymentViewModelBuilder>();
 builder.Services.AddScoped<ISeminaireViewModelBuilder, SeminaireViewModelBuilder>();
 
 
-
+builder.Services.AddHttpClient();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",

@@ -45,17 +45,24 @@ namespace ApplicationCheikh.Api.Builders.impl
                 var payemnt = paymentList.FirstOrDefault(x => x.Id == r.Id);
                 var seminaire = seminaires.FirstOrDefault(x => x.Id == payemnt.IdSeminaire);
 
-                var seminaireVM = new SeminaireViewModel { 
-                    Id = r.Id,
-                    Title = seminaire.Title,
-                    Active = seminaire.Active,
-                    Amount = seminaire.Amount,
-                    Banner = new ImageVIewModel(),
-                    Graphic = new ImageVIewModel(),
-                    Video  = new MediaViewModel()
-                };
+                if (payemnt.IdSeminaire != null)
+                {
 
-                r.Seminaire = seminaireVM;
+                    var seminaireVM = new SeminaireViewModel
+                    {
+                        Id = r.Id,
+                        Title = seminaire.Title,
+                        Active = seminaire.Active,
+                        Amount = seminaire.Amount,
+                        Banner = new ImageVIewModel(),
+                        Graphic = new ImageVIewModel(),
+                        Video = new MediaViewModel()
+                    };
+
+                    r.Seminaire = seminaireVM;
+                }
+                else
+                    r.Seminaire = null;
             }
 
             return result;
