@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="MailKit" Version="4.12.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Design" Version="1.1.6" />
@@ -20,5 +21,20 @@
     <ProjectReference Include="..\ApplicationCheikh.Dal\ApplicationCheikh.Dal.csproj" />
     <ProjectReference Include="..\ApplicationCheikh.Domain\ApplicationCheikh.Domain.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Templates\Images\" />
+    <Folder Include="Templates\Payments\" />
+    <Folder Include="Templates\Registrations\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+  <Content Include="Templates\Mails\mail-seminaire.html">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+    <Content Include="Templates\Payments\payment-seminaire.html">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+</ItemGroup>
 
 </Project>

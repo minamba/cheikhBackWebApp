@@ -38,6 +38,7 @@ builder.Services.AddScoped<IRegistrationQueueViewModelBuilder, RegistrationQueue
 builder.Services.AddScoped<ISeminaireQueueViewModelBuilder, SeminaireQueueViewModelBuilder>();
 builder.Services.AddScoped<IPaymentViewModelBuilder, PaymentViewModelBuilder>();
 builder.Services.AddScoped<ISeminaireViewModelBuilder, SeminaireViewModelBuilder>();
+builder.Services.AddScoped<IMailViewModelBuilder, MailViewModelBuilder>();
 
 
 builder.Services.AddHttpClient();
@@ -46,7 +47,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://192.168.1.94:3001", "http://localhost:3001")
+            policy.WithOrigins("http://192.168.1.94:3000", "http://localhost:3000")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });

@@ -34,6 +34,7 @@ namespace ApplicationCheikh.Api.Mapper
              .ForMember(x => x.Mail, dest => dest.MapFrom(x => x.Mail))
              .ForMember(x => x.Amount, dest => dest.MapFrom(x => x.Amount))
              .ForMember(x => x.PaymentMode, dest => dest.MapFrom(x => x.PaymentMode))
+             .ForMember(x => x.MailSent, dest => dest.MapFrom(x => x.MailSent))
              .ForMember(x => x.Date, dest => dest.MapFrom(x => x.Date));
         }
     }

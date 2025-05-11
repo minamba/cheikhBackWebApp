@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApplicationCheikh.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class TelegramController : ControllerBase
     {
         private readonly HttpClient _httpClient;
@@ -25,8 +25,8 @@ namespace ApplicationCheikh.Api.Controllers
             var message = $"👤 *Nouvelle demande d'entretien* :\n" +
                           $"- Nom : {user.LastName}\n" +
                           $"- Prénom : {user.FirstName}\n" +
-                          $"- Email : {user.mail}\n" +
-                          $"- Téléphone : {user.PhoneNumbber}";
+                          $"- Email : {user.Mail}\n" +
+                          $"- Téléphone : {user.PhoneNumber}";
 
             var url = $"https://api.telegram.org/bot{botToken}/sendMessage";
 

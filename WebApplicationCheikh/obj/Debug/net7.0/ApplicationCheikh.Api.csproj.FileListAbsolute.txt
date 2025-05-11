@@ -102,3 +102,13 @@ C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\obj\Debug\
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\obj\Debug\net7.0\ApplicationCheikh.Api.pdb
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\obj\Debug\net7.0\ApplicationCheikh.Api.genruntimeconfig.cache
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\obj\Debug\net7.0\ref\ApplicationCheikh.Api.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\MailKit.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\MimeKit.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Formats.Asn1.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Text.Encoding.CodePages.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Text.Encoding.CodePages.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Templates\Mails\mail-seminaire.html
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Templates\Payments\payment-seminaire.html

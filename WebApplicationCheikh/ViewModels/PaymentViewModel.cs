@@ -23,6 +23,7 @@ namespace ApplicationCheikh.Domain.Models
         public DateTime? Date { get; set; }
 
         public string? PaymentMode { get; set; }
+        public bool? MailSent { get; set; }
 
         public SeminaireViewModel? Seminaire { get; set; }
     }
