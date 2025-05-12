@@ -1,4 +1,5 @@
-﻿using ApplicationCheikh.Domain.Models;
+﻿using ApplicationCheikh.Api.ViewModels;
+using ApplicationCheikh.Domain.Models;
 using Profile = AutoMapper.Profile;
 
 namespace ApplicationCheikh.Api.Mapper
@@ -36,6 +37,12 @@ namespace ApplicationCheikh.Api.Mapper
              .ForMember(x => x.PaymentMode, dest => dest.MapFrom(x => x.PaymentMode))
              .ForMember(x => x.MailSent, dest => dest.MapFrom(x => x.MailSent))
              .ForMember(x => x.Date, dest => dest.MapFrom(x => x.Date));
+
+
+            CreateMap<Registration, RegistrationViewModel>()
+             .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
+             .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
+             .ForMember(x => x.IsClosed, dest => dest.MapFrom(x => x.IsClosed));
         }
     }
 }
