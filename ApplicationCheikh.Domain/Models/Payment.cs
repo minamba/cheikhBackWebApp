@@ -20,4 +20,10 @@ public partial class Payment
     public DateTime? Date { get; set; }
 
     public string? PaymentMode { get; set; }
+
+    public int? IdSeminaire { get; set; }
+
+    public bool? MailSent { get; set; }
+
+    public virtual Seminaire? IdSeminaireNavigation { get; set; }
 }

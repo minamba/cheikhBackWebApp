@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace ApplicationCheikh.Domain.Models;
 
 public partial class Seminaire
@@ -22,6 +21,10 @@ public partial class Seminaire
     public virtual Image? IdBannerNavigation { get; set; }
 
     public virtual Media? IdMediaNavigation { get; set; }
+
+    public virtual ICollection<Payment> Payments { get; } = new List<Payment>();
+
+    public virtual ICollection<SeminaireQueue> SeminaireQueues { get; } = new List<SeminaireQueue>();
 
     public virtual ICollection<Session> Sessions { get; } = new List<Session>();
 

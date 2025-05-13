@@ -17,9 +17,24 @@ namespace ApplicationCheikh.Domain.Services.imp
             _mediaRepository = mediaRepository;
         }
 
+        public async Task<Media> AddMedia(Media model)
+        {
+            return await _mediaRepository.AddMedia(model);
+        }
+
+        public async Task<bool> DeleteMedia(int IdMedia)
+        {
+            return await _mediaRepository.DeleteMedia(IdMedia);
+        }
+
         public async Task<List<Media>> GetMediasAsync()
         {
-            return new List<Media>();
+           return await _mediaRepository.GetMediasAsync();
+        }
+
+        public async Task<Media> UpdateMedia(int IdMedia, Media model)
+        {
+           return await _mediaRepository.UpdateMedia(IdMedia, model);
         }
     }
 }

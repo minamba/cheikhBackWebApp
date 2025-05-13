@@ -10,5 +10,8 @@ namespace ApplicationCheikh.Domain.Repositories
     public interface ISessionRepository
     {
         Task<List<Session>> GetSessionsAsync();
+        Task<Session> UpdateSession(int Idtsession, Session model);
+        Task<bool> DeleteSession(int Idsession);
+        Task<Session> AddSessions(Session model);
     }
 }

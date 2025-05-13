@@ -38,6 +38,7 @@ namespace ApplicationCheikh.Dal.Respositories
                 Amount = model.Amount,
                 PhoneNumber = model.PhoneNumber,
                 PaymentMode = model.PaymentMode,
+                MailSent = model.MailSent,
 
             };
 
@@ -62,6 +63,7 @@ namespace ApplicationCheikh.Dal.Respositories
             if (model.Mail != null) paymentToUpdate.Mail = model.Mail;
             if (model.PhoneNumber != null) paymentToUpdate.PhoneNumber = model.PhoneNumber;
             if (model.Date.HasValue) paymentToUpdate.Date = model.Date.Value;
+            if (model.MailSent.HasValue) paymentToUpdate.MailSent = model.MailSent.Value;
 
             await _context.SaveChangesAsync();
 

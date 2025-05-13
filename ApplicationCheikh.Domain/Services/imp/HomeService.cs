@@ -19,8 +19,12 @@ namespace ApplicationCheikh.Domain.Services.imp
 
         public async Task<Home> GetHomeAsync()
         {
-            return new Home();
+            return await _homeRepository.GetHomeAsync();
         }
 
+        public async Task<Home> UpdateHome(int IdHome, Home model)
+        {
+            return await _homeRepository.UpdateHome(IdHome, model);
+        }
     }
 }

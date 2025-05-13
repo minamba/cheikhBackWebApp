@@ -27,7 +27,7 @@ namespace ApplicationCheikh.Dal.Respositories
                 LastName = model.LastName,
                 FirstName = model.FirstName,
                 Email = model.Email,
-                Date = model.Date,
+                Date = DateTime.Now,
                 MailSent = model.MailSent,
                 
             };

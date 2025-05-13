@@ -17,9 +17,24 @@ namespace ApplicationCheikh.Domain.Services.imp
             _sessionRepository = sessionRepository;
         }
 
+        public async Task<Session> AddSessions(Session model)
+        {
+            return await _sessionRepository.AddSessions(model);
+        }
+
+        public async Task<bool> DeleteSession(int Idsession)
+        {
+            return await _sessionRepository.DeleteSession(Idsession);
+        }
+
         public async Task<List<Session>> GetSessionsAsync()
         {
-            return new List<Session>();
+            return await _sessionRepository.GetSessionsAsync();
+        }
+
+        public async Task<Session> UpdateSession(int Idtsession, Session model)
+        {
+            return await _sessionRepository.UpdateSession(Idtsession, model);
         }
     }
 }

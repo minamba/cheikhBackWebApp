@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ApplicationCheikh.Domain.Repositories
 {
-    public interface IHomeRepository
+    public interface IRegistrationRepository
     {
-        Task<Home> GetHomeAsync();
-        Task<Home> UpdateHome(int IdHome, Home model);
+        Task<List<Registration>> GetRegistration();
+        Task<Registration> UpdateRegistration(int IRegistration, Registration model);
     }
 }

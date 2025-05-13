@@ -35,7 +35,7 @@ namespace ApplicationCheikh.Dal.Respositories
                 LastName = model.LastName,
                 FirstName = model.FirstName,
                 Email = model.Email,
-                Date = model.Date,
+                Date = DateTime.Now,
                 IsContacted = model.IsContacted,
                 PhoneNumber = model.PhoneNumber,
                 SendedToBot = model.SendedToBot

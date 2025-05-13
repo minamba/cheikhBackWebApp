@@ -102,6 +102,7 @@ public partial class MiaDatabaseContext : DbContext
             entity.Property(e => e.FirstName)
                 .HasMaxLength(50)
                 .HasColumnName("First_name");
+            entity.Property(e => e.IdSeminaire).HasColumnName("Id_seminaire");
             entity.Property(e => e.LastName)
                 .HasMaxLength(50)
                 .HasColumnName("Last_name");
@@ -112,6 +113,10 @@ public partial class MiaDatabaseContext : DbContext
             entity.Property(e => e.PhoneNumber)
                 .HasMaxLength(50)
                 .HasColumnName("Phone_number");
+
+            entity.HasOne(d => d.IdSeminaireNavigation).WithMany(p => p.Payments)
+                .HasForeignKey(d => d.IdSeminaire)
+                .HasConstraintName("FK_Payment_Seminaire");
         });
 
         modelBuilder.Entity<PaymentPg>(entity =>
@@ -181,10 +186,16 @@ public partial class MiaDatabaseContext : DbContext
             entity.Property(e => e.FirstName)
                 .HasMaxLength(50)
                 .HasColumnName("First_name");
+            entity.Property(e => e.IdSeminaire).HasColumnName("Id_seminaire");
             entity.Property(e => e.LastName)
                 .HasMaxLength(50)
                 .HasColumnName("Last_name");
             entity.Property(e => e.MailSent).HasColumnName("Mail_sent");
+
+            entity.HasOne(d => d.IdSeminaireNavigation).WithMany(p => p.SeminaireQueues)
+                .HasForeignKey(d => d.IdSeminaire)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_Seminaire_queue_Seminaire");
         });
 
         modelBuilder.Entity<Session>(entity =>

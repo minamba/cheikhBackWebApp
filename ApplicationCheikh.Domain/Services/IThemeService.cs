@@ -10,5 +10,8 @@ namespace ApplicationCheikh.Domain.Services
     public interface IThemeService
     {
         Task<List<Theme>> GetThemesAsync();
+        Task<Theme> AddTheme(Theme model);
+        Task<Theme> UpdateTheme(int Idtheme, Theme model);
+        Task<bool> DeleteTheme(int IdTheme);
     }
 }

@@ -16,4 +16,8 @@ public partial class SeminaireQueue
     public DateTime? Date { get; set; }
 
     public bool? MailSent { get; set; }
+
+    public int? IdSeminaire { get; set; }
+
+    public virtual Seminaire? IdSeminaireNavigation { get; set; }
 }

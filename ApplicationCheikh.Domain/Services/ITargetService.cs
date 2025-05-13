@@ -10,5 +10,8 @@ namespace ApplicationCheikh.Domain.Services
     public interface ITargetService
     {
         Task<List<Target>> GetTargetsAsync();
+        Task<Target> UpdateTarget(int Idtarget, Target model);
+        Task<bool> DeleteTarget(int IdTarget);
+        Task<Target> AddTarget(Target model);
     }
 }

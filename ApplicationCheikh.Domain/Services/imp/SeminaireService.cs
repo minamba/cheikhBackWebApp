@@ -17,9 +17,25 @@ namespace ApplicationCheikh.Domain.Services.imp
             _seminaireRepository = seminaireRepository;
         }
 
-        public async Task<Seminaire> GetSeminaireAsync()
+        public async Task<Seminaire> AddSeminaire(Seminaire model)
         {
-            return new Seminaire();
+            return await _seminaireRepository.AddSeminaire(model);
+        }
+
+        public async Task<bool> DeleteSeminaire(int IdSeminaire)
+        {
+            return await _seminaireRepository.DeleteSeminaire(IdSeminaire);
+        }
+
+
+        public async Task<List<Seminaire>> GetSeminaires()
+        {
+            return await _seminaireRepository.GetSeminaires();
+        }
+
+        public async Task<Seminaire> UpdateSeminaire(int IdSeminaire, Seminaire model)
+        {
+            return await _seminaireRepository.UpdateSeminaire(IdSeminaire, model);
         }
     }
 }

@@ -9,6 +9,9 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface ISeminaireService
     {
-        Task<Seminaire> GetSeminaireAsync();
+        Task<Seminaire> AddSeminaire(Seminaire model);
+        Task<bool> DeleteSeminaire(int IdSeminaire);
+        Task<List<Seminaire>> GetSeminaires();
+        Task<Seminaire> UpdateSeminaire(int IdSeminaire, Seminaire model);
     }
 }

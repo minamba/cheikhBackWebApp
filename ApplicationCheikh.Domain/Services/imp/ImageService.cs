@@ -17,10 +17,24 @@ namespace ApplicationCheikh.Domain.Services.imp
             _imageRepository = imageRepository;
         }
 
-        public async Task<List<Image>> GetImagesAsync()
+        public async Task<Image> AddImage(Image model)
         {
-            return new List<Image>();
+            return await _imageRepository.AddImage(model);
         }
 
+        public async Task<bool> DeleteImage(int IdImage)
+        {
+           return await _imageRepository.DeleteImage(IdImage);
+        }
+
+        public async Task<List<Image>> GetImagesAsync()
+        {
+           return await _imageRepository.GetImagesAsync();
+        }
+
+        public async Task<Image> UpdateImage(int IdImage, Image model)
+        {
+           return await _imageRepository.UpdateImage(IdImage, model);
+        }
     }
 }

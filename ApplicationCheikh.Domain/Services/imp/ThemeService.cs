@@ -17,9 +17,24 @@ namespace ApplicationCheikh.Domain.Services.imp
             _themeRepository = themeRepository;
         }
 
+        public async Task<Theme> AddTheme(Theme model)
+        {
+            return await _themeRepository.AddTheme(model);
+        }
+
+        public async Task<bool> DeleteTheme(int IdTheme)
+        {
+            return await _themeRepository.DeleteTheme(IdTheme);
+        }
+
         public async Task<List<Theme>> GetThemesAsync()
         {
-            return new List<Theme>();
+            return await _themeRepository.GetThemesAsync();
+        }
+
+        public async Task<Theme> UpdateTheme(int Idtheme, Theme model)
+        {
+            return await _themeRepository.UpdateTheme(Idtheme, model);
         }
     }
 }

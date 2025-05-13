@@ -10,4 +10,6 @@ public partial class Registration
     public string? Title { get; set; }
 
     public int? IdBanner { get; set; }
+
+    public bool? IsClosed { get; set; }
 }

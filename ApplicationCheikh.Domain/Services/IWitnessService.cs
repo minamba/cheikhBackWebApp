@@ -9,6 +9,9 @@ namespace ApplicationCheikh.Domain.Services
 {
     public interface IWitnessService
     {
-        Task<List<Witness>> GetWitnessesAsync();
+        Task<List<Witness>> GetWitnessAsync();
+        Task<Witness> AddWitness(Witness model);
+        Task<Witness> UpdateWitness(int IdWitness, Witness model);
+        Task<bool> DeleteWitness(int IdWitness);
     }
 }

@@ -17,9 +17,29 @@ namespace ApplicationCheikh.Domain.Services.imp
             _witnessRepository = witnessRepository;
         }
 
+        public async Task<Witness> AddWitness(Witness model)
+        {
+            return await _witnessRepository.AddWitness(model);
+        }
+
+        public async Task<bool> DeleteWitness(int IdWitness)
+        {
+            return await _witnessRepository.DeleteWitness(IdWitness);
+        }
+
+        public async Task<List<Witness>> GetWitnessAsync()
+        {
+            return await _witnessRepository.GetWitnessAsync();
+        }
+
         public async Task<List<Witness>> GetWitnessesAsync()
         {
-            return new List<Witness>();
+            return await _witnessRepository.GetWitnessAsync();
+        }
+
+        public async Task<Witness> UpdateWitness(int IdWitness, Witness model)
+        {
+            return await _witnessRepository.UpdateWitness(IdWitness, model);
         }
     }
 }

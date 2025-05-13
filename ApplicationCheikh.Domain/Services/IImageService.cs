@@ -10,5 +10,8 @@ namespace ApplicationCheikh.Domain.Services
     public interface IImageService
     {
         Task<List<Image>> GetImagesAsync();
+        Task<Image> AddImage(Image model);
+        Task<Image> UpdateImage(int IdImage, Image model);
+        Task<bool> DeleteImage(int IdImage);
     }
 }
