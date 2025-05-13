@@ -43,6 +43,36 @@ namespace ApplicationCheikh.Api.Mapper
              .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
              .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
              .ForMember(x => x.IsClosed, dest => dest.MapFrom(x => x.IsClosed));
+
+
+            CreateMap<Image, ImageVIewModel>()
+               .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
+               .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
+               .ForMember(x => x.Url, dest => dest.MapFrom(x => x.Url));
+
+
+            CreateMap<Media, MediaViewModel>()
+              .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
+              .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
+              .ForMember(x => x.Url, dest => dest.MapFrom(x => x.Url));
+
+
+            CreateMap<Session, SessionViewModel>()
+              .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
+              .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
+              .ForMember(x => x.Detail, dest => dest.MapFrom(x => x.Detail));
+
+
+            CreateMap<Target, TargetViewModel>()
+            .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
+            .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
+            .ForMember(x => x.Detail, dest => dest.MapFrom(x => x.Detail));
+
+
+            CreateMap<Theme, ThemeViewModel>()
+              .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
+              .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
+              .ForMember(x => x.Detail, dest => dest.MapFrom(x => x.Detail));
         }
     }
 }

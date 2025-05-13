@@ -24,7 +24,7 @@ namespace ApplicationCheikh.Api.Builders
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        Task<SeminaireQueueViewModel> AddSeminaireUserQueue(SeminaireQueue model);
+        Task<(SeminaireQueueViewModel list, string error )> AddSeminaireUserQueue(SeminaireQueue model);
 
         /// <summary>
         /// 

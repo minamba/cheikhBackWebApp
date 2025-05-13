@@ -19,13 +19,22 @@ namespace ApplicationCheikh.Api.Builders.impl
             _mapper = mapper;
         }
 
-        public async Task<SeminaireQueueViewModel> AddSeminaireUserQueue(SeminaireQueue model)
+        public async Task<(SeminaireQueueViewModel list, string error)> AddSeminaireUserQueue(SeminaireQueue model)
         {
-            var seminaireToAdd = await _seminaireQueueService.AddSeminaireUserQueue(model);
 
-            var result = _mapper.Map<SeminaireQueueViewModel>(seminaireToAdd);
+            if (await VerifUserExist(model) == false)
+            {
 
-            return result;
+                var seminaireToAdd = await _seminaireQueueService.AddSeminaireUserQueue(model);
+
+                var result = _mapper.Map<SeminaireQueueViewModel>(seminaireToAdd);
+
+                return (result, null);
+            }
+            else
+            {
+                return (null, "Cet utilisateur est deja enregistré !");
+            }
         }
 
         public async Task<bool> DeleteSeminaireUserQueue(int IdUser)
@@ -75,6 +84,19 @@ namespace ApplicationCheikh.Api.Builders.impl
             var result = _mapper.Map<SeminaireQueueViewModel>(userToUpdate);
 
             return result;
+        }
+
+
+
+        private async Task<bool> VerifUserExist(SeminaireQueue model)
+        {
+            var getuser =  _seminaireQueueService.GetSeminaireUsersQueue().Result.FirstOrDefault(x => x.Email == model.Email);
+
+            if (getuser != null)
+            {
+                return true;
+            }   
+            return false;
         }
     }
 }

@@ -14,6 +14,6 @@ namespace ApplicationCheikh.Domain.Models
 
         public string? Description { get; set; }
 
-        public int? IdMedia { get; set; }
+        public MediaViewModel? Media { get; set; }
     }
 }

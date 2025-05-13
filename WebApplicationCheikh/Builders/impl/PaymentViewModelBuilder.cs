@@ -19,13 +19,20 @@ namespace ApplicationCheikh.Api.Builders.impl
             _mapper = mapper;
         }
 
-        public async Task<PaymentViewModel> AddPayment(Payment model)
+        public async Task<(PaymentViewModel payment, string error)> AddPayment(Payment model)
         {
-            var paymentToAdd = await _paymentService.AddPayment(model);
 
-            var result = _mapper.Map<PaymentViewModel>(paymentToAdd);
+            if (await VerifUserExist(model) == false)
+            {
+                var paymentToAdd = await _paymentService.AddPayment(model);
 
-            return result;
+                var result = _mapper.Map<PaymentViewModel>(paymentToAdd);
+
+                return (result, null);
+            }
+            else
+                return (null, "Cet utilisateur est deja inscrit pour le seminaire !");
+
         }
 
         public async Task<bool> DeletePayment(int IdPayment)
@@ -75,6 +82,18 @@ namespace ApplicationCheikh.Api.Builders.impl
             var result = _mapper.Map<PaymentViewModel>(paymentToUpdate);
 
             return result;
+        }
+
+
+        private async Task<bool> VerifUserExist(Payment model)
+        {
+            var getuser = _paymentService.GetPayments().Result.FirstOrDefault(x => x.Mail == model.Mail);
+
+            if (getuser != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

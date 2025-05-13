@@ -4,6 +4,7 @@ using ApplicationCheikh.Api.Builders;
 using ApplicationCheikh.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Diagnostics.Eventing.Reader;
 using System.Net;
 
 namespace ApplicationCheikh.Api.Controllers
@@ -48,7 +49,12 @@ namespace ApplicationCheikh.Api.Controllers
             public async Task<IActionResult> PostSeminaireUsersAsync([FromBody] SeminaireQueue model)
             {
                 var result = await _seminaireQueueViewModelBuilder.AddSeminaireUserQueue(model);
-                return Ok(result);
+
+                
+                if(result.error == null)
+                    return Ok(result);
+                else//
+                    return BadRequest(result.error);
             }
 
 

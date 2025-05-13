@@ -6,7 +6,7 @@ namespace ApplicationCheikh.Api.Builders
     {
         Task<List<PaymentViewModel>> GetPayments();
         Task<PaymentViewModel> UpdatePayment(int IdPayment, Payment model);
-        Task<PaymentViewModel> AddPayment(Payment model);
+        Task<(PaymentViewModel payment, string error)> AddPayment(Payment model);
         Task<bool> DeletePayment(int IdPayment);
     }
 }

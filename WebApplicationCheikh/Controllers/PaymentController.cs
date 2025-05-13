@@ -45,7 +45,11 @@ namespace ApplicationCheikh.Api.Controllers
         public async Task<IActionResult> PostPaymentAsync([FromBody] Payment model)
         {
             var result = await _paymentViewModelBuilder.AddPayment(model);
-            return Ok(result);
+
+            if(result.error == null)
+                return Ok(result);
+            else
+                return BadRequest(result.error);
         }
 
 

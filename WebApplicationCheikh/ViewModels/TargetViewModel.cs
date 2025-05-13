@@ -14,6 +14,6 @@ namespace ApplicationCheikh.Domain.Models
 
         public string? Detail { get; set; }
 
-        public int IdSeminaire { get; set; }
+        public SeminaireViewModel? Seminaire { get; set; }
     }
 }
