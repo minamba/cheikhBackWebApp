@@ -73,6 +73,11 @@ namespace ApplicationCheikh.Api.Mapper
               .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
               .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
               .ForMember(x => x.Detail, dest => dest.MapFrom(x => x.Detail));
+
+            CreateMap<Witness, WitnessViewModel>()
+             .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
+             .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
+             .ForMember(x => x.Description, dest => dest.MapFrom(x => x.Description));
         }
     }
 }

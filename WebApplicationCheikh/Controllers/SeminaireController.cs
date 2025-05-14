@@ -19,7 +19,7 @@ namespace ApplicationCheikh.Api.Controllers
             _seminaireViewModelBuilder = seminaireViewModelBuilder ?? throw new ArgumentNullException(nameof(seminaireViewModelBuilder), $"Cannot instantiate {GetType().Name}");
         }
 
-        [HttpGet("seminaires")]
+        [HttpGet("/seminaires")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(List<SeminaireViewModel>), Description = "liste des seminaires")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> GetSeminaireAsync()
@@ -29,7 +29,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpPut("seminaire")]
+        [HttpPut("/seminaire")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "mise à jour d'un seminaire")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> UpdateSeminaireAsync([FromBody] Seminaire model)
@@ -40,7 +40,7 @@ namespace ApplicationCheikh.Api.Controllers
 
 
 
-        [HttpPost("seminaire")]
+        [HttpPost("/seminaire")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Ajout d'un potentiel futur elève")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> PostSeminaireAsync([FromBody] Seminaire model)
@@ -50,7 +50,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpDelete("{id}")]
+        [HttpDelete("/seminaire/{id}")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Suppression d'un potentiel futur elève")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> DeleteSeminaireAsync([FromRoute] int Id)

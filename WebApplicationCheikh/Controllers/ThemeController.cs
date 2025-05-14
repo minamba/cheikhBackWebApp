@@ -6,6 +6,8 @@ using System.Net;
 
 namespace ApplicationCheikh.Api.Controllers
 {
+    [ApiController]
+    [Route("Theme")]
     public class ThemeController : Controller
     {
         IThemeViewModelBuilder _themeViewModelBuilder;
@@ -17,7 +19,7 @@ namespace ApplicationCheikh.Api.Controllers
 
 
 
-        [HttpPost("/themes/theme")]
+        [HttpPost("/theme")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "ajout temoignage")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> AddThemeAsync([FromBody] Theme model)
@@ -37,7 +39,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpPut("/themes/theme")]
+        [HttpPut("/theme")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Modif elève")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> UpdateThemeAsync([FromBody] Theme model)
@@ -47,7 +49,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpDelete("{id}")]
+        [HttpDelete("/theme/{id}")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Suppression d'un potentiel futur elève")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> DeleteThemeAsync([FromRoute] int Id)

@@ -6,6 +6,8 @@ using System.Net;
 
 namespace ApplicationCheikh.Api.Controllers
 {
+    [ApiController]
+    [Route("Images")]
     public class ImageController : Controller
     {
         IImageViewModelBuilder _imageViewModelBuilder;
@@ -17,7 +19,7 @@ namespace ApplicationCheikh.Api.Controllers
 
 
 
-        [HttpPost("/images/image")]
+        [HttpPost("/image")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "ajout temoignage")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> AddImageAsync([FromBody] Image model)
@@ -37,7 +39,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpPut("/images/image")]
+        [HttpPut("/image")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Modif elève")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> UpdateImageAsync([FromBody] Image model)

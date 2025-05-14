@@ -19,7 +19,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpGet("payments")]
+        [HttpGet("/payments")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(IEnumerable<PaymentViewModel>), Description = "liste des paiements")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> GetPaymentsAsync()
@@ -29,7 +29,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpPut("payment")]
+        [HttpPut("/payment")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(PaymentViewModel), Description = "modification d'un paiement")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> PutPaymentAsync([FromBody] Payment model)
@@ -39,7 +39,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpPost("payment")]
+        [HttpPost("/payment")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(PaymentViewModel), Description = "ajout d'un paiement")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> PostPaymentAsync([FromBody] Payment model)
@@ -53,7 +53,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpDelete("{id}")]
+        [HttpDelete("/payment/{id}")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Suppression d'un paiement")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> DeletePaymentAsync([FromRoute] int id)

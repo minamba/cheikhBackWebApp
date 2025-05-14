@@ -12,9 +12,9 @@ namespace ApplicationCheikh.Api.Builders.impl
         private IMediaService _mediaService;
         private IMapper _mapper;
 
-        public HomeViewModelBuilder(IHomeService _homeService, IImageService imageService, IMediaService mediaService, IMapper mapper)
+        public HomeViewModelBuilder(IHomeService homeService, IImageService imageService, IMediaService mediaService, IMapper mapper)
         {
-            _homeService = _homeService;
+            _homeService = homeService;
             _imageService = imageService;
             _mediaService = mediaService;
             _mapper = mapper;

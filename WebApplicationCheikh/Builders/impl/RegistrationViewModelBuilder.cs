@@ -9,11 +9,13 @@ namespace ApplicationCheikh.Api.Builders.impl
     public class RegistrationViewModelBuilder : IRegistrationViewModelBuilder
     {
         private IRegistrationService _registrationService;
+        private IImageViewModelBuilder _imageViewModelBuilder;
         private IMapper _mapper;
 
-        public RegistrationViewModelBuilder(IRegistrationService registrationService, IMapper mapper)
+        public RegistrationViewModelBuilder(IRegistrationService registrationService, IImageViewModelBuilder imageViewModelBuilder, IMapper mapper)
         {
             _registrationService = registrationService;
+            _imageViewModelBuilder = imageViewModelBuilder;
             _mapper = mapper;
         }
 
@@ -21,18 +23,19 @@ namespace ApplicationCheikh.Api.Builders.impl
         public async Task<List<RegistrationViewModel>> GetRegistration()
         {
             var registrations = await _registrationService.GetRegistration();
+            var imagesVM = await _imageViewModelBuilder.GetImagesAsync();
 
             var result = _mapper.Map<List<RegistrationViewModel>>(registrations);
 
-            foreach (var r in result)
+
+            foreach (var reg in registrations)
             {
-                    var seminaireVM = new RegistrationViewModel
-                    {
-                        Id = r.Id,
-                        Title = r.Title,
-                        Image = null,
-                        IsClosed = r.IsClosed
-                    };
+              
+                foreach (var r in result)
+                {
+                    var imageVM = imagesVM.FirstOrDefault(x => x.Id == reg.IdBanner);
+                    r.Image = imageVM;
+                }
             }
 
             return result;

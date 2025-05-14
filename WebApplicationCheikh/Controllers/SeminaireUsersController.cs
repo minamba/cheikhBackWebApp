@@ -22,7 +22,7 @@ namespace ApplicationCheikh.Api.Controllers
             }
 
 
-            [HttpGet("SeminaireUsers")]
+            [HttpGet("/seminaireUsers")]
             [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(SeminaireQueueViewModel), Description = "liste des elèves pour le prochain seminaire")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> GetSeminaireUsersAsync()
@@ -32,7 +32,7 @@ namespace ApplicationCheikh.Api.Controllers
             }
 
 
-            [HttpPut("SeminaireUser")]
+            [HttpPut("/seminaireUser")]
             [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Ajout d'un potentiel futur elève")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> UpdateSeminaireUsersAsync([FromBody] SeminaireQueue model)
@@ -43,7 +43,7 @@ namespace ApplicationCheikh.Api.Controllers
 
 
 
-            [HttpPost("SeminaireUser")]
+            [HttpPost("/seminaireUser")]
             [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Ajout d'un potentiel futur elève")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> PostSeminaireUsersAsync([FromBody] SeminaireQueue model)
@@ -58,7 +58,7 @@ namespace ApplicationCheikh.Api.Controllers
             }
 
 
-            [HttpDelete("{id}")]
+            [HttpDelete("/seminaireUser/{id}")]
             [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Suppression d'un potentiel futur elève")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> DeleteSeminaireUsersAsync([FromRoute] int Id)

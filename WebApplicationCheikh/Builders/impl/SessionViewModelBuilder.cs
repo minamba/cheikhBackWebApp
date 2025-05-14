@@ -42,19 +42,25 @@ namespace ApplicationCheikh.Api.Builders.impl
         public async Task<List<SessionViewModel>> GetSessionsAsync()
         {
             var sessions = _sessionService.GetSessionsAsync().Result.ToList();
+            var seminaires = _seminaireService.GetSeminaires().Result.ToList();
+
             var list = new List<SessionViewModel>();
 
             var result = _mapper.Map<List<SessionViewModel>>(sessions);
 
-            foreach (var session in sessions)
-            {      
-                foreach(var r in result)
+            foreach (var r in result)
+            {
+                foreach (var t in sessions)
                 {
-                    var SeminaireVM = _seminaireService.GetSeminaires().Result.FirstOrDefault(s => s.Id == session.IdSeminaire);
 
-                    r.Seminaire = SeminaireVM;
+                    if (t.Id == r.Id)
+                    {
+                        var SeminaireVM = _seminaireService.GetSeminaires().Result.FirstOrDefault(s => s.Id == t.IdSeminaire);
+
+                        r.Seminaire = SeminaireVM;
+                    }
                 }
-               
+
             }
 
             return result;

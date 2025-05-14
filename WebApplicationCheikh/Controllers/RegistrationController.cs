@@ -21,7 +21,7 @@ namespace ApplicationCheikh.Api.Controllers
             }
 
 
-            [HttpGet("registrations")]
+            [HttpGet("/registrations")]
             [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(IEnumerable<RegistrationQueueViewModel>), Description = "liste des potentiels futurs elèves")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> GetRegistrationsAsync()
@@ -31,7 +31,7 @@ namespace ApplicationCheikh.Api.Controllers
             }
 
 
-            [HttpPut("registration")]
+            [HttpPut("/registration")]
             [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "modification d'un potentiel futur elève")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> PutRegistrationsAsync([FromBody] RegistrationQueue model)
@@ -41,7 +41,7 @@ namespace ApplicationCheikh.Api.Controllers
             }
 
 
-            [HttpPost("registration")]
+            [HttpPost("/registration")]
             [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "ajout d'un potentiel futur elève")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> PostRegistrationsAsync([FromBody] RegistrationQueue model)
@@ -51,7 +51,7 @@ namespace ApplicationCheikh.Api.Controllers
             }
 
 
-            [HttpDelete("{id}")]
+            [HttpDelete("/registration/{id}")]
             [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Suppression d'un potentiel futur elève")]
             [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
             public async Task<IActionResult> DeleteRegistrationsAsync([FromRoute] int id)

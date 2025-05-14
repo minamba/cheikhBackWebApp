@@ -21,7 +21,7 @@ namespace ApplicationCheikh.Api.Controllers
             _registrationViewModelBuilder = registrationViewModelBuilder ?? throw new ArgumentNullException(nameof(registrationViewModelBuilder), $"Cannot instantiate {GetType().Name}");
         }
 
-        [HttpGet("registration")]
+        [HttpGet("/registrationPage")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(List<RegistrationViewModel>), Description = "liste des registrations")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> GetRegistrationAsync()
@@ -31,7 +31,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpPut("registration")]
+        [HttpPut("/registrationPage")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "mise à jour d'un registration")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> UpdateRegistrationAsync([FromBody] Registration model)

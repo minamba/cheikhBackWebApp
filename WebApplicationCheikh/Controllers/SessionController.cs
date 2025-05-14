@@ -7,6 +7,8 @@ using System.Net;
 
 namespace ApplicationCheikh.Api.Controllers
 {
+    [ApiController]
+    [Route("Session")]
     public class SessionController : Controller
     {
         ISessionViewModelBuilder _sessionViewModelBuilder;
@@ -18,7 +20,7 @@ namespace ApplicationCheikh.Api.Controllers
 
 
 
-        [HttpPost("/sessions/session")]
+        [HttpPost("/session")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "ajout temoignage")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> AddSessionAsync([FromBody] Session model)
@@ -38,7 +40,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpPut("/sessions/session")]
+        [HttpPut("/session")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Modif elève")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> UpdateSessionAsync([FromBody] Session model)
@@ -48,7 +50,7 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        [HttpDelete("{id}")]
+        [HttpDelete("/session/{id}")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Suppression d'un potentiel futur elève")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
         public async Task<IActionResult> DeleteSessionAsync([FromRoute] int Id)
