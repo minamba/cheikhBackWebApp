@@ -1,5 +1,6 @@
 ﻿using ApplicationCheikh.Domain.Models;
 using ApplicationCheikh.Domain.Services;
+using ApplicationCheikh.Domain.Services.imp;
 using AutoMapper;
 
 namespace ApplicationCheikh.Api.Builders.impl
@@ -40,20 +41,25 @@ namespace ApplicationCheikh.Api.Builders.impl
             {
                 foreach(var r in result)
                 {
-                    var media = _mediaService.GetMediasAsync().Result.FirstOrDefault(x => x.Id == w.IdMedia);
+                    if (w.Id == r.Id)
+                    {
+                        var media = _mediaService.GetMediasAsync().Result.FirstOrDefault(x => x.Id == w.IdMedia);
 
-                    r.Media = media;
+                        r.Media = media;
+                    }
                 }
             }
-
             return result;
         }
 
-        public async Task<WitnessViewModel> UpdateWitness(int IdWitness, Witness model)
-        {
-            var witness = await _witnessService.UpdateWitness(IdWitness, model);
+ 
 
-            return _mapper.Map<WitnessViewModel>(witness);
-        }
-    }
-}
+
+            public async Task<WitnessViewModel> UpdateWitness(int IdWitness, Witness model)
+                    {
+                        var witness = await _witnessService.UpdateWitness(IdWitness, model);
+
+                        return _mapper.Map<WitnessViewModel>(witness);
+                    }
+                }
+            }

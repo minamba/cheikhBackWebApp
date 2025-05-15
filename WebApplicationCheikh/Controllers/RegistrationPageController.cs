@@ -30,7 +30,7 @@ namespace ApplicationCheikh.Api.Controllers
             return Ok(result);
         }
 
-
+        
         [HttpPut("/registrationPage")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "mise à jour d'un registration")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]

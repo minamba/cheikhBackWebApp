@@ -47,9 +47,11 @@ namespace ApplicationCheikh.Api.Builders.impl
             return result;
         }
 
-        public Task<HomeViewModel> UpdateHome(int IdHome, Home model)
+        public async Task<HomeViewModel> UpdateHome(int IdHome, Home model)
         {
-            throw new NotImplementedException();
+
+             await _homeService.UpdateHome(model.Id, model);
+            return new HomeViewModel();
         }
     }
 }

@@ -8,6 +8,8 @@ using ApplicationCheikh.Domain.Repositories;
 using ApplicationCheikh.Domain.Services;
 using ApplicationCheikh.Domain.Services.imp;
 using AutoMapper;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -74,15 +76,45 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://192.168.1.94:3000", "http://localhost:3000")
+            policy.WithOrigins("http://192.168.1.94:3000", "http://localhost:3000", "http://localhost:7161", "http://localhost:5161")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
 });
 
 
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new() { Title = "Mon API", Version = "v1" });
+
+    // Affiche les noms d'enum en Swagger
+    options.UseInlineDefinitionsForEnums();
+});
+
+
+
+builder.Services.Configure<FormOptions>(options =>
+{
+    options.MultipartBodyLengthLimit = 1024 * 1024 * 900; // 900 Mo
+});
+
+
 
 var app = builder.Build();
+
+
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mon API V1");
+    });
+}
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -92,13 +124,15 @@ if (app.Environment.IsDevelopment())
 }
 
 
-
+app.UseStaticFiles();
 app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
+
 
 app.UseAuthorization();
 
 app.MapControllers();
+
 //app.UseMvc();
 
 app.Run();

@@ -26,6 +26,10 @@
     <Folder Include="Templates\Images\" />
     <Folder Include="Templates\Payments\" />
     <Folder Include="Templates\Registrations\" />
+    <Folder Include="wwwroot\sounds\" />
+    <Folder Include="wwwroot\witnesses\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\videos\" />
   </ItemGroup>
   
   <ItemGroup>
