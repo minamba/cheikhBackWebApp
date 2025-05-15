@@ -49,13 +49,13 @@ namespace ApplicationCheikh.Api.Controllers
         }
 
 
-        //[HttpDelete("{id}")]
-        //[SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Suppression d'un potentiel futur elève")]
-        //[SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
-        //public async Task<IActionResult> DeleteMediaAsync([FromRoute] int Id)
-        //{
-        //    var result = await _mediaViewModelBuilder.DeleteMedia(Id);
-        //    return Ok(result);
-        //}
+        [HttpDelete("{id}")]
+        [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Suppression d'un potentiel futur elève")]
+        [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
+        public async Task<IActionResult> DeleteMediaAsync([FromRoute] int Id)
+        {
+            var result = await _mediaViewModelBuilder.DeleteMedia(Id);
+            return Ok(result);
+        }
     }
 }

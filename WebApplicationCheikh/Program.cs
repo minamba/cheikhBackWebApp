@@ -1,4 +1,4 @@
-using ApplicationCheikh.Api.Builder;
+﻿using ApplicationCheikh.Api.Builder;
 using ApplicationCheikh.Api.Builder.impl;
 using ApplicationCheikh.Api.Builders;
 using ApplicationCheikh.Api.Builders.impl;
@@ -10,6 +10,7 @@ using ApplicationCheikh.Domain.Services.imp;
 using AutoMapper;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -78,7 +79,10 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins("http://192.168.1.94:3000", "http://localhost:3000", "http://localhost:7161", "http://localhost:5161")
                   .AllowAnyHeader()
-                  .AllowAnyMethod();
+                  .AllowAnyMethod()
+                  .AllowCredentials()
+                  .SetIsOriginAllowed(_ => true);
+
         });
 });
 
@@ -114,6 +118,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
+app.UseStaticFiles(); // pour wwwroot si besoin
 
 
 // Configure the HTTP request pipeline.

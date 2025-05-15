@@ -30,9 +30,9 @@ namespace ApplicationCheikh.Api.Builders.impl
             };
         }
 
-        public Task<bool> DeleteMedia(int IdMedia)
+        public async Task<bool> DeleteMedia(int IdMedia)
         {
-            throw new NotImplementedException();
+            return await _mediaService.DeleteMedia(IdMedia);
         }
 
         public async Task<List<MediaViewModel>> GetMediasAsync()
@@ -56,9 +56,13 @@ namespace ApplicationCheikh.Api.Builders.impl
             return list;
         }
 
-        public Task<MediaViewModel> UpdateMedia(int IdMedia, Media model)
+        public async Task<MediaViewModel> UpdateMedia(int IdMedia, Media model)
         {
-            throw new NotImplementedException();
+            var mediaToUpdate = await _mediaService.UpdateMedia(model.Id, model);
+
+            var result = _mapper.Map<MediaViewModel>(mediaToUpdate);
+
+            return result;
         }
     }
 }

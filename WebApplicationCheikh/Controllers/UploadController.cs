@@ -7,45 +7,49 @@ using ApplicationCheikh.Api.Enums;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using ApplicationCheikh.Api.Builders;
 using ApplicationCheikh.Domain.Models;
+using Swashbuckle.AspNetCore.Annotations;
+using System.Net;
+using ApplicationCheikh.Api.Requests;
 
 namespace ApplicationCheikh.Api.Controllers
 {
-
-
-    [Route("Upload")]
     [ApiController]
-    public class UploadController : ControllerBase
+    [Route("Upload")]
+    public class UploadController : Controller
     {
         private readonly IWebHostEnvironment _env;
         IImageViewModelBuilder _imageViewModelBuilder;
         IMediaViewModelBuilder _mediaViewModelBuilder;
-        IWitnessViewModelBuilder _witnessViewModelBuilder;
 
         const string images = "images";
         const string videos = "videos";
         const string sounds = "sounds";
 
-        public UploadController(IWebHostEnvironment env, IMediaViewModelBuilder mediaViewModelBuilder, IWitnessViewModelBuilder witnessViewModelBuilder, IImageViewModelBuilder imageViewModelBuilder)
+        public UploadController(IWebHostEnvironment env, IMediaViewModelBuilder mediaViewModelBuilder , IImageViewModelBuilder imageViewModelBuilder)
         {
             _env = env;
             _mediaViewModelBuilder = mediaViewModelBuilder;
-            _witnessViewModelBuilder = witnessViewModelBuilder;
             _imageViewModelBuilder = imageViewModelBuilder;
         }
 
         [RequestSizeLimit(524288000)]
         [Consumes("multipart/form-data")]
-        [HttpPost("doc")]
-        public async Task<IActionResult> UploadDocument([FromForm] IFormFile file, [FromForm] string type)
+        [HttpPost("/upload")]
+        [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "ajout temoignage")]
+        [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
+        public async Task<IActionResult> UploadDocument([FromForm] UploadRequest request)
         {
 
-            if (file == null || file.Length == 0)
+            if (request.File == null)
+                return Ok("création sans l'ajout du fichier");
+
+            if (request.File == null || request.File.Length == 0)
                 return BadRequest("Fichier non fourni.");
 
-            if (!Enum.TryParse<MediasType>(type, true, out var mediaType))
+            if (!Enum.TryParse<MediasType>(request.Type, true, out var mediaType))
                 return BadRequest("Type invalide. Utilise IMAGE, VIDEO, SOUND.");
 
-            var fName  = Path.GetFileName(file.FileName);
+            var fName = Path.GetFileName(request.File.FileName);
 
 
             // URL d'accès si exposée
@@ -76,13 +80,13 @@ namespace ApplicationCheikh.Api.Controllers
                 Directory.CreateDirectory(uploadsFolder);
 
             // Nom de fichier sécurisé
-            var fileName = Path.GetFileName(file.FileName);
+            var fileName = Path.GetFileName(request.File.FileName);
             var filePath = Path.Combine(uploadsFolder, fileName);
 
             // Sauvegarde du fichier
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                await file.CopyToAsync(stream);
+                await request.File.CopyToAsync(stream);
             }
 
 

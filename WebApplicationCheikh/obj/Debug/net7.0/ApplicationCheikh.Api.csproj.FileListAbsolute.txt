@@ -1,5 +1,8 @@
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\appsettings.json
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Templates\Mails\mail-seminaire.html
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Templates\Payments\payment-seminaire.html
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\ApplicationCheikh.Api.staticwebassets.runtime.json
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\ApplicationCheikh.Api.exe
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\ApplicationCheikh.Api.deps.json
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\ApplicationCheikh.Api.runtimeconfig.json
@@ -9,6 +12,8 @@ C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\MailKit.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
@@ -45,6 +50,7 @@ C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\MimeKit.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -53,11 +59,14 @@ C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Formats.Asn1.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Memory.Data.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Runtime.Caching.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Text.Encoding.CodePages.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Text.Encodings.Web.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Windows.Extensions.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -74,7 +83,9 @@ C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Text.Encoding.CodePages.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\ApplicationCheikh.Dal.dll
@@ -102,14 +113,3 @@ C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\obj\Debug\
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\obj\Debug\net7.0\ApplicationCheikh.Api.pdb
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\obj\Debug\net7.0\ApplicationCheikh.Api.genruntimeconfig.cache
 C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\obj\Debug\net7.0\ref\ApplicationCheikh.Api.dll
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\MailKit.dll
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\MimeKit.dll
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Formats.Asn1.dll
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\System.Text.Encoding.CodePages.dll
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Text.Encoding.CodePages.dll
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Templates\Mails\mail-seminaire.html
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\Templates\Payments\payment-seminaire.html
-C:\Users\daryu\source\repos\WebApplicationCheikh\WebApplicationCheikh\bin\Debug\net7.0\ApplicationCheikh.Api.staticwebassets.runtime.json

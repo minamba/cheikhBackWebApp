@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "v4bHiUNuikzCDzCwp3x0ZdwaPpLnOws6rgAokk+bStU=",
+  "Hash": "WKg1SoOVKA5MQlqAfjKwaIMiO/ugzeMvBDBxj9e5OGM=",
   "Source": "ApplicationCheikh.Api",
   "BasePath": "_content/ApplicationCheikh.Api",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\images\\exercice.mp4",
+      "Identity": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\images\\_.jpeg",
       "SourceId": "ApplicationCheikh.Api",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\",
       "BasePath": "_content/ApplicationCheikh.Api",
-      "RelativePath": "images/exercice.mp4",
+      "RelativePath": "images/_.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,41 +31,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\exercice.mp4"
-    },
-    {
-      "Identity": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\images\\téléchargement (16).jpg",
-      "SourceId": "ApplicationCheikh.Api",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\",
-      "BasePath": "_content/ApplicationCheikh.Api",
-      "RelativePath": "images/téléchargement (16).jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\téléchargement (16).jpg"
-    },
-    {
-      "Identity": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\images\\unpacked.JPG",
-      "SourceId": "ApplicationCheikh.Api",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\",
-      "BasePath": "_content/ApplicationCheikh.Api",
-      "RelativePath": "images/unpacked.JPG",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\unpacked.JPG"
+      "OriginalItemSpec": "wwwroot\\images\\_.jpeg"
     },
     {
       "Identity": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\sounds\\Copie de Copie de Ajouter un titre (4).png",
@@ -83,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sounds\\Copie de Copie de Ajouter un titre (4).png"
+    },
+    {
+      "Identity": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\videos\\video2.mp4",
+      "SourceId": "ApplicationCheikh.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\daryu\\source\\repos\\WebApplicationCheikh\\WebApplicationCheikh\\wwwroot\\",
+      "BasePath": "_content/ApplicationCheikh.Api",
+      "RelativePath": "videos/video2.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\videos\\video2.mp4"
     }
   ]
 }
