@@ -16,7 +16,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services
+    .AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+    });
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -37,6 +44,9 @@ builder.Services.AddScoped<ISessionRepository, SessionRepository>();
 builder.Services.AddScoped<ITargetRepository, TargetRepository>();
 builder.Services.AddScoped<IThemeRepository, ThemeRepository>();
 builder.Services.AddScoped<IWitnessRepository, WitnessRepository>();
+builder.Services.AddScoped<ICloseRegistrationRepository, CloseRegistrationRepository>();
+builder.Services.AddScoped<IPaymentPageRepository, PaymentPageRepository>();
+
 
 //scoped services
 builder.Services.AddScoped<IRegistrationQueueService, RegistrationQueueService>();
@@ -51,6 +61,9 @@ builder.Services.AddScoped<ISessionService, SessionService>();
 builder.Services.AddScoped<ITargetService, TargetService>();
 builder.Services.AddScoped<IThemeService, ThemeService>();
 builder.Services.AddScoped<IWitnessService, WitnessService>();
+builder.Services.AddScoped<ICloseRegistrationService, CloseRegistrationService>();
+builder.Services.AddScoped<IPaymentPageService, PaymentPageService>();
+
 
 //scoped builders
 builder.Services.AddScoped<IRegistrationQueueViewModelBuilder, RegistrationQueueViewModelBuilder>();
@@ -66,6 +79,10 @@ builder.Services.AddScoped<ISessionViewModelBuilder, SessionViewModelBuilder>();
 builder.Services.AddScoped<ITargetViewModelBuilder, TargetViewModelBuilder>();
 builder.Services.AddScoped<IThemeViewModelBuilder, ThemeViewModelBuilder>();
 builder.Services.AddScoped<IWitnessViewModelBuilder, WitnessViewModelBuilder>();
+builder.Services.AddScoped<ICloseRegistrationViewModelBuilder, CloseRegistrationViewModelBuilder>();
+builder.Services.AddScoped<IPaymentPageViewModelBuilder, PaymentPageViewModelBuilder>();
+
+
 
 
 
@@ -94,6 +111,8 @@ builder.Services.AddSwaggerGen(options =>
     // Affiche les noms d'enum en Swagger
     options.UseInlineDefinitionsForEnums();
 });
+
+
 
 
 
@@ -130,6 +149,15 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseStaticFiles();
+
+//app.UseStaticFiles(new StaticFileOptions
+//{
+//    FileProvider = new PhysicalFileProvider(
+//        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images")),
+//    RequestPath = "/images"
+//});
+
+
 app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
 

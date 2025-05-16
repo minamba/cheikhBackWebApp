@@ -21,7 +21,7 @@ namespace ApplicationCheikh.Api.Controllers
         IImageViewModelBuilder _imageViewModelBuilder;
         IMediaViewModelBuilder _mediaViewModelBuilder;
 
-        const string images = "images";
+        const string images = "imgs";
         const string videos = "videos";
         const string sounds = "sounds";
 

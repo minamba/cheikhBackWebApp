@@ -1,6 +1,7 @@
 ﻿using ApplicationCheikh.Api.Builder;
 using ApplicationCheikh.Api.Builders;
 using ApplicationCheikh.Api.Builders.impl;
+using ApplicationCheikh.Api.Requests;
 using ApplicationCheikh.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -43,9 +44,19 @@ namespace ApplicationCheikh.Api.Controllers
         [HttpPost("/seminaire")]
         [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(string), Description = "Ajout d'un potentiel futur elève")]
         [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "An unexpected error occurred")]
-        public async Task<IActionResult> PostSeminaireAsync([FromBody] Seminaire model)
+        public async Task<IActionResult> PostSeminaireAsync([FromBody] SeminaireRequest model)
         {
-            var result = await _seminaireViewModelBuilder.AddSeminaire(model);
+
+            var seminaire = new Seminaire()
+            {
+                IdBanner = model.IdBanner,
+                IdImage = model.IdImage,
+                IdMedia = model.IdMedia,
+                Amount = model.Amount,
+                Active = model.Active,
+            };
+
+            var result = await _seminaireViewModelBuilder.AddSeminaire(seminaire);
             return Ok(result);
         }
 

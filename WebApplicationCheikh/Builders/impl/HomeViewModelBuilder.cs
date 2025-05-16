@@ -21,30 +21,54 @@ namespace ApplicationCheikh.Api.Builders.impl
 
         }
 
+        public async Task<HomeViewModel> AddHome(Home model)
+        {
+            var hVM = new HomeViewModel()
+            {
+                IdBanner = model.IdBanner,
+                IdMedia = model.IdMedia,
+                Title = model.Title,
+                IdImage = model.IdImage,
+            };
+
+            return hVM;
+        }
 
         public async Task<HomeViewModel> GetHomeAsync()
         {
            var home = await _homeService.GetHomeAsync();
-           var banner = _imageService.GetImagesAsync().Result.FirstOrDefault(x => x.Id == home.IdBanner);
-           var image = _imageService.GetImagesAsync().Result.FirstOrDefault(x => x.Id == home.IdImage);
-           var video = _mediaService.GetMediasAsync().Result.FirstOrDefault(x => x.Id == home.IdMedia);
-
-           var bannerVm = _mapper.Map<ImageVIewModel>(banner);
-           var imageVm = _mapper.Map<ImageVIewModel>(image);
-           var videoVm = _mapper.Map<MediaViewModel>(video);
-
-
-
-            var result = new HomeViewModel()
+            if (home != null)
             {
-                Id = home.Id,
-                Title = home.Title,
-                Banner  = bannerVm,
-                Image = imageVm,
-                Media = videoVm,
-            };
+                var banner = _imageService.GetImagesAsync().Result.FirstOrDefault(x => x.Id == home.IdBanner);
+                var image = _imageService.GetImagesAsync().Result.FirstOrDefault(x => x.Id == home.IdImage);
+                var video = _mediaService.GetMediasAsync().Result.FirstOrDefault(x => x.Id == home.IdMedia);
 
-            return result;
+                var bannerVm = _mapper.Map<ImageVIewModel>(banner);
+                var imageVm = _mapper.Map<ImageVIewModel>(image);
+                var videoVm = _mapper.Map<MediaViewModel>(video);
+
+                if (home != null)
+                {
+
+                    var result = new HomeViewModel()
+                    {
+                        Id = home.Id,
+                        Title = home.Title,
+                        Banner = bannerVm,
+                        Image = imageVm,
+                        Media = videoVm,
+                    };
+
+                    return result;
+
+                }
+                else
+                    return new HomeViewModel();
+            }
+            else
+            { return new HomeViewModel(); }
+     
+    
         }
 
         public async Task<HomeViewModel> UpdateHome(int IdHome, Home model)

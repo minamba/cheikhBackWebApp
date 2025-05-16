@@ -6,5 +6,6 @@ namespace ApplicationCheikh.Api.Builders
     {
         Task<HomeViewModel> GetHomeAsync();
         Task<HomeViewModel> UpdateHome(int IdHome, Home model);
+        Task<HomeViewModel> AddHome(Home model);
     }
 }

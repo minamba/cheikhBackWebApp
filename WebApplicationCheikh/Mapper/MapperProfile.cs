@@ -78,6 +78,16 @@ namespace ApplicationCheikh.Api.Mapper
              .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
              .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title))
              .ForMember(x => x.Description, dest => dest.MapFrom(x => x.Description));
+
+
+            CreateMap<CloseRegistration, CloseRegistrationViewModel>()
+             .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
+             .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title));
+
+
+            CreateMap<PaymentPg, PaymentPageViewModel>()
+           .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id))
+           .ForMember(x => x.Title, dest => dest.MapFrom(x => x.Title));
         }
     }
 }
