@@ -94,7 +94,7 @@ namespace ApplicationCheikh.Api.Controllers
                         PhoneNumber = phoneNumber,
                         Amount = session.AmountTotal / 100.0m,
                         Date = DateTime.UtcNow,
-                        PaymentMode = paymentmode,
+                        PaymentMode = "CB",
                         IdSeminaire = int.TryParse(idSeminaire, out var id) ? id : 0,
                         MailSent = isMailSent
                     });
