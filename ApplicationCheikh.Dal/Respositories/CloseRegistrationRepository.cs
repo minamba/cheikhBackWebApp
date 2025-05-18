@@ -10,26 +10,28 @@ using System.Threading.Tasks;
 
 namespace ApplicationCheikh.Dal.Respositories
 {
-    public class RegistrationRepository : IRegistrationRepository
+    public class CloseRegistrationRepository : ICloseRegistrationRepository
     {
         private MiaDatabaseContext _context { get; set; }
         private readonly IMapper _mapper;
 
-        public RegistrationRepository()
+        public CloseRegistrationRepository()
         {
             _context = new MiaDatabaseContext();
         }
 
 
-        public async Task<List<Registration>> GetRegistration()
+        public async Task<CloseRegistration> GetCloseRegistration()
         {
-            return await _context.Registrations.ToListAsync();
+            var result = await _context.CloseRegistrations.FirstOrDefaultAsync();
+
+            return result;
         }
 
-        public async Task<Registration> UpdateRegistration(int IRegistration, Registration model)
+        public async Task<CloseRegistration> UpdateCloseRegistration(int IRegistration, CloseRegistration model)
         {
             // On récupère l'utilisateur existant (celui déjà en base)
-            var registrationToUpdate = await _context.Registrations.FirstOrDefaultAsync(u => u.Id == IRegistration);
+            var registrationToUpdate = await _context.CloseRegistrations.FirstOrDefaultAsync(u => u.Id == IRegistration);
 
             if (registrationToUpdate == null)
                 return null; // ou throw une exception
@@ -37,7 +39,6 @@ namespace ApplicationCheikh.Dal.Respositories
             // On met à jour ses propriétés
             if (model.Title != null) registrationToUpdate.Title = model.Title;
             if (model.IdBanner != null) registrationToUpdate.IdBanner = model.IdBanner;
-            if (model.IsClosed != null) registrationToUpdate.IsClosed = model.IsClosed;
 
             await _context.SaveChangesAsync();
 

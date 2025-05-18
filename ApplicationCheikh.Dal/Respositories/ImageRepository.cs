@@ -43,7 +43,7 @@ namespace ApplicationCheikh.Dal.Respositories
         }
 
         public async Task<Image> UpdateImage(int IdImage, Image model)
-        {
+              {
             var ImageToUpdate = await _context.Images.FirstOrDefaultAsync(u => u.Id == IdImage);
 
             if (ImageToUpdate == null)

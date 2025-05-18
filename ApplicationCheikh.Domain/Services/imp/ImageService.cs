@@ -34,7 +34,12 @@ namespace ApplicationCheikh.Domain.Services.imp
 
         public async Task<Image> UpdateImage(int IdImage, Image model)
         {
-           return await _imageRepository.UpdateImage(IdImage, model);
+           var result =  await _imageRepository.UpdateImage(IdImage, model);
+
+            if (result != null)
+                return result;
+            else
+                return new Image();
         }
     }
 }

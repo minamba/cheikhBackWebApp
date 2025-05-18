@@ -7,7 +7,7 @@ public partial class PaymentPg
 {
     public int Id { get; set; }
 
-    public string Title { get; set; } = null!;
+    public string Title { get; set; }
 
     public int? IdBanner { get; set; }
 }

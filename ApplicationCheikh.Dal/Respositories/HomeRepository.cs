@@ -42,21 +42,49 @@ namespace ApplicationCheikh.Dal.Respositories
 
         public async Task<Home> UpdateHome(int IdHome, Home model)
         {
-            var HomeToUpdate = await _context.Homes.FirstOrDefaultAsync(u => u.Id == IdHome);
 
-            if (HomeToUpdate == null)
-                return null; // ou throw une exception
+            try
+            {
+                var HomeToUpdate = await _context.Homes.FirstOrDefaultAsync(u => u.Id == IdHome);
 
-            // On met à jour ses propriétés
-            if (model.Title != null) HomeToUpdate.Title = model.Title;
-            if (model.IdBanner != null) HomeToUpdate.IdBanner = model.IdBanner;
-            if (model.IdImage != null) HomeToUpdate.IdImage = model.IdImage;
-            if (model.IdMedia != null) HomeToUpdate.IdMedia = model.Id;
+                if (HomeToUpdate == null)
+                    return null; // ou throw une exception
 
-            await _context.SaveChangesAsync();
+                // On met à jour ses propriétés
+                if (model.Title != null) HomeToUpdate.Title = model.Title;
+                if (model.IdBanner != null) HomeToUpdate.IdBanner = model.IdBanner;
+                if (model.IdImage != null) HomeToUpdate.IdImage = model.IdImage;
+                if (model.IdMedia != null) HomeToUpdate.IdMedia = model.IdMedia;
 
-            return HomeToUpdate;
+                await _context.SaveChangesAsync();
 
+                return HomeToUpdate;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+
+        }
+
+
+
+        public async Task<Home> AddHome(Home model)
+        {
+            var newHome = new Home
+            {
+                Title = model.Title,
+                IdBanner = model.IdBanner,
+                IdMedia = model.IdMedia,
+                IdImage = model.IdImage,
+            };
+
+            _context.Homes.Add(newHome);
+            _context.SaveChanges();
+
+
+            return newHome;
         }
     }
 }

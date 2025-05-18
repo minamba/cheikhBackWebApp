@@ -17,6 +17,11 @@ namespace ApplicationCheikh.Domain.Services.imp
             _homeRepository = homeRepository;
         }
 
+        public async Task<Home> AddHome(Home model)
+        {
+           return await _homeRepository.AddHome(model);
+        }
+
         public async Task<Home> GetHomeAsync()
         {
             return await _homeRepository.GetHomeAsync();

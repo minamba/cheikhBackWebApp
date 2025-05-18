@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace ApplicationCheikh.Domain.Services
 {
-    public interface IHomeService
+    public interface ICloseRegistrationService
     {
-       Task<Home> GetHomeAsync();
-       Task<Home> UpdateHome(int IdHome, Home model);
-       Task<Home> AddHome(Home model);
+        Task<CloseRegistration> GetCloseRegistration();
+        Task<CloseRegistration> UpdateCloseRegistration(int IRegistration, CloseRegistration model);
     }
 }

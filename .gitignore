@@ -301,6 +301,12 @@ node_modules/
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
 
 # Paket dependency manager
 .paket/paket.exe
