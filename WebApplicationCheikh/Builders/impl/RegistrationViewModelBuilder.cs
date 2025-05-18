@@ -33,8 +33,11 @@ namespace ApplicationCheikh.Api.Builders.impl
               
                 foreach (var r in result)
                 {
-                    var imageVM = imagesVM.FirstOrDefault(x => x.Id == reg.IdBanner);
-                    r.Image = imageVM;
+                    if (r.Id == reg.Id)
+                    {
+                        var imageVM = imagesVM.FirstOrDefault(x => x.Id == reg.IdBanner);
+                        r.Image = imageVM;
+                    }
                 }
             }
 

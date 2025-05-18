@@ -53,7 +53,11 @@ namespace ApplicationCheikh.Api.Controllers
         {
 
             var result = await _mailViewModelBuilder.SendMailPayment(recipient);
-            return Ok(result);
+
+            if (result == null)
+                return null;
+            else
+                return Ok("mail envoyé");
         }
 
         [HttpPost("/send/payment/Group")]

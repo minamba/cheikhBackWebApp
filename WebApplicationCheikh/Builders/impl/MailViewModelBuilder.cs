@@ -95,7 +95,7 @@ namespace ApplicationCheikh.Api.Builders.impl
             string htmlContent = await File.ReadAllTextAsync(filePath);
 
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("Institut Malik Ibn Anas", "minamba.c@gmail.com"));
+            message.From.Add(new MailboxAddress("Institut Malik Ibn Anas", "malikibnanas.institut@gmail.com"));
             message.To.Add(new MailboxAddress("", recipient));
             message.Subject = subject.ToUpper();
 
@@ -113,7 +113,7 @@ namespace ApplicationCheikh.Api.Builders.impl
                 // Ignorer la vérification de certificat (à éviter en production)
                 client.ServerCertificateValidationCallback = (s, c, h, e) => true;
                 await client.ConnectAsync("smtp.gmail.com", 587, false);
-                await client.AuthenticateAsync("minamba.c@gmail.com", "lfdo fzlq pjcr sdor");
+                await client.AuthenticateAsync("malikibnanas.institut@gmail.com", "hkej cqve xcpt ctvp");
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);
 

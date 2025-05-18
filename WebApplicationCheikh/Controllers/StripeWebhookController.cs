@@ -16,6 +16,7 @@ namespace ApplicationCheikh.Api.Controllers
         IMailViewModelBuilder _mail;
         private readonly ILogger<StripeWebhookController> _logger;
         private readonly IConfiguration _configuration;
+        private bool isMailSent = false;
 
         public StripeWebhookController(ILogger<StripeWebhookController> logger, IConfiguration configuration, IPaymentViewModelBuilder payment, IMailViewModelBuilder mail)
         {
@@ -70,6 +71,20 @@ namespace ApplicationCheikh.Api.Controllers
                     session.Metadata.TryGetValue("idSeminaire", out var idSeminaire);
                     session.Metadata.TryGetValue("title", out var seminaireTitle);
 
+
+                        // ✅ Envoi du mail
+                    var mailSent = await _mail.SendMailPayment(new Requests.PaymentRequest
+                    {
+                         Recipient = mail,
+                         SeminaireTitle = seminaireTitle 
+                    });
+
+                    if (mailSent != null)
+                        isMailSent = true;
+                    else
+                        isMailSent = false;
+
+
                     // ✅ Enregistrement dans la base
                     var result = await _payment.AddPayment(new Payment
                     {
@@ -80,17 +95,11 @@ namespace ApplicationCheikh.Api.Controllers
                         Amount = session.AmountTotal / 100.0m,
                         Date = DateTime.UtcNow,
                         PaymentMode = paymentmode,
-                        IdSeminaire = int.TryParse(idSeminaire, out var id) ? id : 0
+                        IdSeminaire = int.TryParse(idSeminaire, out var id) ? id : 0,
+                        MailSent = isMailSent
                     });
 
                     Console.WriteLine($"✅ Paiement ajouté : {result}");
-
-                    // ✅ Envoi du mail
-                    await _mail.SendMailPayment(new Requests.PaymentRequest
-                    {
-                        Recipient = mail,
-                        SeminaireTitle = seminaireTitle
-                    });
 
                     _logger.LogInformation($"✅ Paiement confirmé et mail envoyé à {mail}");
                 }
